@@ -55,11 +55,11 @@ const itemVariants = {
 
 const TechStack = () => {
   return (
-    <section id="stack" className="relative py-24">
+    <section id="stack" className="relative py-20 md:py-28">
       {/* Glow */}
-      <div className="absolute inset-x-0 top-0 h-40 bg-primary/5 blur-3xl" />
+      <div className="absolute inset-x-0 top-0 h-40 bg-purple-500/5 blur-3xl" />
 
-      <div className="container relative z-10 px-6">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl text-center">
           {/* Header */}
           <motion.div
@@ -67,13 +67,13 @@ const TechStack = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="mb-16"
+            className="mb-12"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Stack <span className="text-gradient">Tecnológica</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              Stack <span className="bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Tecnológica</span>
             </h2>
-            <div className="mx-auto mb-4 h-1 w-16 rounded-full bg-gradient-purple" />
-            <p className="mx-auto max-w-lg text-muted-foreground">
+            <div className="mx-auto mb-6 h-1 w-16 rounded-full bg-linear-to-r from-purple-500 to-pink-500" />
+            <p className="mx-auto max-w-2xl text-base sm:text-lg text-gray-400">
               Tecnologias que utilizo para criar soluções completas, modernas e escaláveis.
             </p>
           </motion.div>
@@ -84,7 +84,7 @@ const TechStack = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid gap-10 md:grid-cols-3"
+            className="grid gap-8 md:grid-cols-3"
           >
             {categories.map((category) => (
               <motion.div
@@ -92,7 +92,7 @@ const TechStack = () => {
                 variants={itemVariants}
                 className="flex flex-col items-center"
               >
-                <h3 className="mb-6 font-mono text-sm text-primary">
+                <h3 className="mb-6 font-mono text-sm text-purple-500">
                   {`// ${category.title}`}
                 </h3>
 
@@ -102,7 +102,7 @@ const TechStack = () => {
                       key={tech}
                       variants={itemVariants}
                       whileHover={{ scale: 1.05 }}
-                      className="cursor-default rounded-lg border border-border bg-muted/40 px-3 py-2 text-sm text-foreground transition-all hover:border-primary/50 hover:bg-muted"
+                      className="cursor-default rounded-lg border border-gray-800 bg-gray-900/40 px-3 py-2 text-sm text-white transition-all hover:border-purple-500/50 hover:bg-gray-800/50"
                     >
                       {tech}
                     </motion.span>

@@ -76,18 +76,18 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contato" className="relative overflow-hidden py-24">
+    <section id="contato" className="relative overflow-hidden py-20 md:py-28">
       {/* Background glow */}
       <motion.div
         variants={glowVariants}
         initial="hidden"
         animate="visible"
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
+        className="absolute bottom-0 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-purple-500/10 blur-3xl"
       />
 
-      <div className="container relative z-10 px-6">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="mx-auto max-w-3xl text-center"
+          className="mx-auto max-w-4xl text-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -96,21 +96,23 @@ const Contact = () => {
           {/* Title */}
           <motion.h2
             variants={itemVariants}
-            className="mb-4 text-3xl font-bold md:text-5xl"
+            className="mb-4 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
           >
             Vamos construir algo{' '}
-            <span className="text-gradient">juntos.</span>
+            <span className="bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+              juntos.
+            </span>
           </motion.h2>
 
           {/* Gradient bar */}
           <motion.div
             variants={itemVariants}
-            className="mx-auto mb-6 h-1 w-16 rounded-full bg-gradient-purple"
+            className="mx-auto mb-8 h-1 w-16 rounded-full bg-linear-to-r from-purple-500 to-pink-500"
           />
 
           <motion.p
             variants={itemVariants}
-            className="mx-auto mb-12 max-w-lg text-lg text-muted-foreground"
+            className="mx-auto mb-10 max-w-2xl text-base text-gray-400 sm:text-lg"
           >
             Interessado em trabalhar juntos ou tem alguma pergunta?
             Entre em contato através dos canais abaixo.
@@ -119,7 +121,7 @@ const Contact = () => {
           {/* Contacts grid */}
           <motion.div
             variants={containerVariants}
-            className="mb-12 grid gap-4 sm:grid-cols-2"
+            className="mx-auto mb-10 grid max-w-3xl gap-4 sm:grid-cols-2"
           >
             {contacts.map((contact) => (
               <motion.a
@@ -132,24 +134,28 @@ const Contact = () => {
                   group
                   relative
                   rounded-xl
-                  bg-card
+                  bg-gray-900/50
+                  border
+                  border-gray-800
                   p-5
                   text-left
-                  border-gradient
-                  hover:bg-muted/30
-                  hover-lift
+                  transition-all
+                  duration-300
+                  hover:bg-gray-800/50
+                  hover:border-purple-500/50
+                  hover:-translate-y-1
                 "
               >
                 <div className="flex items-center gap-4">
-                  <div className="rounded-lg bg-primary/10 p-2.5 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <div className="rounded-lg bg-purple-500/10 p-2.5 text-purple-500 transition-colors group-hover:bg-purple-500 group-hover:text-white">
                     <contact.icon className="h-5 w-5" />
                   </div>
 
-                  <div className="min-w-0">
-                    <p className="mb-1 text-xs uppercase tracking-wider text-muted-foreground">
+                  <div className="min-w-0 flex-1">
+                    <p className="mb-1 text-xs uppercase tracking-wider text-gray-500">
                       {contact.label}
                     </p>
-                    <p className="truncate text-sm font-medium text-foreground">
+                    <p className="truncate text-sm font-medium text-white">
                       {contact.value}
                     </p>
                   </div>
@@ -167,14 +173,18 @@ const Contact = () => {
               items-center
               gap-2
               rounded-lg
-              bg-gradient-purple
+              bg-linear-to-r
+              from-purple-500
+              to-pink-500
               px-8
-              py-4
+              py-3.5
               font-medium
-              text-primary-foreground
+              text-white
               transition-all
               duration-300
               hover:scale-105
+              hover:shadow-lg
+              hover:shadow-purple-500/25
             "
           >
             <Mail className="h-5 w-5" />

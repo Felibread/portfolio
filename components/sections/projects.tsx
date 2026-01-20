@@ -47,11 +47,11 @@ const itemVariants = {
 
 const Projects = () => {
   return (
-    <section id="projetos" className="relative py-24">
+    <section id="projetos" className="relative py-20 md:py-28">
       {/* Glow de fundo */}
-      <div className="absolute inset-x-0 top-0 h-40 bg-primary/5 blur-3xl" />
+      <div className="absolute inset-x-0 top-0 h-40 bg-purple-500/5 blur-3xl" />
 
-      <div className="container relative z-10 px-6">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl text-center">
           {/* Header */}
           <motion.div
@@ -59,13 +59,13 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="mb-16"
+            className="mb-12"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Projetos em <span className="text-gradient">Destaque</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              Projetos em <span className="bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Destaque</span>
             </h2>
-            <div className="mx-auto mb-4 h-1 w-16 rounded-full bg-gradient-purple" />
-            <p className="mx-auto max-w-lg text-muted-foreground">
+            <div className="mx-auto mb-6 h-1 w-16 rounded-full bg-linear-to-r from-purple-500 to-pink-500" />
+            <p className="mx-auto max-w-2xl text-base sm:text-lg text-gray-400">
               Soluções reais para problemas reais. Do conceito à produção.
             </p>
           </motion.div>
@@ -82,15 +82,15 @@ const Projects = () => {
               <motion.article
                 key={project.title}
                 variants={itemVariants}
-                className="group flex h-full flex-col rounded-2xl border-gradient bg-card p-6 transition-all duration-300 hover:bg-muted/20 hover-lift"
+                className="group flex h-full flex-col rounded-2xl border border-gray-800 bg-gray-900/50 p-6 transition-all duration-300 hover:bg-gray-800/50 hover:border-purple-500/50 hover:-translate-y-1"
               >
                 {/* Top */}
                 <div className="mb-4 flex items-start justify-between gap-4">
                   <div className="text-left">
-                    <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-sm font-medium text-primary">
+                    <p className="text-sm font-medium text-purple-500">
                       {project.subtitle}
                     </p>
                   </div>
@@ -101,7 +101,7 @@ const Projects = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-md p-2 text-muted-foreground hover:text-foreground transition-colors"
+                        className="rounded-md p-2 text-gray-400 hover:text-white transition-colors"
                         aria-label="GitHub"
                       >
                         <Github className="h-4 w-4" />
@@ -112,7 +112,7 @@ const Projects = () => {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-md p-2 text-muted-foreground hover:text-primary transition-colors"
+                        className="rounded-md p-2 text-gray-400 hover:text-purple-500 transition-colors"
                         aria-label="Projeto ao vivo"
                       >
                         <ExternalLink className="h-4 w-4" />
@@ -122,16 +122,16 @@ const Projects = () => {
                 </div>
 
                 {/* Description */}
-                <p className="mb-6 text-left text-sm leading-relaxed text-muted-foreground">
+                <p className="mb-6 text-left text-sm leading-relaxed text-gray-400">
                   {project.description}
                 </p>
 
                 {/* Techs */}
-                <div className="mt-auto flex flex-wrap gap-2 border-t border-border/50 pt-4">
+                <div className="mt-auto flex flex-wrap gap-2 border-t border-gray-800 pt-4">
                   {project.techs.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md bg-muted/50 px-2 py-1 text-xs font-mono text-muted-foreground"
+                      className="rounded-md bg-gray-800/50 px-2 py-1 text-xs font-mono text-gray-400"
                     >
                       {tech}
                     </span>

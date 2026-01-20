@@ -17,44 +17,46 @@ const item = {
 
 const About = () => {
   return (
-    <section id="about" className="relative py-32 overflow-hidden">
+    <section id="about" className="relative py-20 md:py-28 overflow-hidden">
       {/* Glow */}
-      <div className="absolute inset-0 bg-gradient-glow opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-black from-purple-500/5 via-transparent to-transparent opacity-40" />
 
-      <div className="container relative z-10 px-6">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mx-auto max-w-3xl text-center"
+          className="mx-auto max-w-4xl text-center"
         >
           <motion.p
             variants={item}
-            className="mb-4 font-mono text-sm tracking-widest text-primary"
+            className="mb-3 font-mono text-xs sm:text-sm tracking-widest text-purple-500"
           >
             SOBRE MIM
           </motion.p>
 
           <motion.h2
             variants={item}
-            className="mb-6 text-4xl md:text-5xl font-bold"
+            className="mb-5 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
           >
             Desenvolvedor focado em{" "}
-            <span className="text-gradient">performance & experiência</span>
+            <span className="bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+              performance & experiência
+            </span>
           </motion.h2>
 
           <motion.div
             variants={item}
-            className="mx-auto mb-8 h-1 w-16 rounded-full bg-gradient-purple"
+            className="mx-auto mb-8 h-1 w-16 rounded-full bg-linear-to-r from-purple-500 to-pink-500"
           />
 
           <motion.p
             variants={item}
-            className="mb-6 text-lg text-muted-foreground leading-relaxed"
+            className="mb-5 text-base sm:text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto"
           >
             Sou desenvolvedor Full Stack, estudante de{" "}
-            <span className="text-foreground font-medium">
+            <span className="text-white font-medium">
               Análise e Desenvolvimento de Sistemas na FIAP
             </span>
             , com foco em criar aplicações modernas, escaláveis e bem
@@ -63,10 +65,10 @@ const About = () => {
 
           <motion.p
             variants={item}
-            className="text-lg text-muted-foreground leading-relaxed"
+            className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto"
           >
             Trabalho principalmente com{" "}
-            <span className="text-foreground font-medium">
+            <span className="text-white font-medium">
               React, Next.js, TypeScript e Tailwind CSS
             </span>
             , aplicando conceitos de UX, design system e código limpo tanto em

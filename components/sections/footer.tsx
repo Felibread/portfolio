@@ -4,31 +4,33 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="relative border-t border-border py-12">
+    <footer className="relative border-t border-gray-800 py-8">
       {/* Glow suave */}
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-primary/5 blur-3xl" />
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-purple-500/5 blur-3xl" />
 
-      <div className="container relative z-10 px-6">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center"
+          className="flex flex-col items-center justify-between gap-4 sm:flex-row"
         >
-          <p className="text-sm text-muted-foreground">
+          {/* Esquerda - Desenvolvido com */}
+          <p className="text-sm text-gray-400">
+            Desenvolvido com{" "}
+            <span className="text-white font-medium">
+              React, Next.js e TypeScript
+            </span>
+          </p>
+
+          {/* Direita - Copyright */}
+          <p className="text-sm text-gray-400">
             © {new Date().getFullYear()}{" "}
-            <span className="text-foreground font-medium">
+            <span className="text-white font-medium">
               Felipe Damasceno
             </span>
             . Todos os direitos reservados.
-          </p>
-
-          <p className="text-sm text-muted-foreground">
-            Desenvolvido com{" "}
-            <span className="text-foreground font-medium">
-              React, Next.js e TypeScript
-            </span>
           </p>
         </motion.div>
       </div>
