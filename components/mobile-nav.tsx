@@ -5,10 +5,10 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about", label: "Sobre Mim" },
+  { href: "#stack", label: "Skills" },
+  { href: "#projetos", label: "Projetos" },
+  { href: "#contato", label: "Contato" },
 ]
 
 export function MobileNav() {
