@@ -8,7 +8,7 @@ const projects = [
     title: "KAGED SPIRIT",
     subtitle: "Landing Page + Pré-save",
     description:
-      "Landing page criada do zero com sistema de pré-save integrado ao Supabase. Design escuro, minimalista e responsivo.",
+      "Landing page criada do zero com sistema de pré-save integrado ao Supabase. Design minimalista e responsivo.",
     techs: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase"],
     liveUrl: "https://kaged-uy.vercel.app",
     githubUrl: "https://github.com/Felibread/kaged.uy",
